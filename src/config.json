@@ -1,6 +1,6 @@
 {
     "discord": {
-        "token": "",
+        "token": "MTA3MzAwMTUyMzI4MzUxMzQ5NA.GxGIt4.PILnZxAHHHe9zgW6RyCDcwxm7-3_06OqFcGqzo",
         "server_id": "180895894739222528"
     },
     "needRole": true,
@@ -8,7 +8,7 @@
     "roles": [
         {
             "name": "Prioridade 1",
-            "roleId": "180899587781820416",
+            "roleId": "980899587781820488",
             "priority": 1
         }
     ]

@@ -11,23 +11,26 @@ const registerToQueue = async (
   deferrals: any
 ) => {
   let discordRoles = await getUserRoles(discord);
+  let foundPrio: number = 0;
+
   console.log(discordRoles);
 
-  if (config.needRole) {
-    for (let i = 0; i < config.roles.length; i++) {
-      let queue = config.roles[i];
-      let hasRole = discordRoles.filter((d) => d == queue.roleId).length > 0;
-      if (hasRole) {
-        priorityQueue.insert(discord, queue.priority, source);
-      }
-
-      if (config.debug) {
-        console.log(
-          `[QUEUE-DISCORD] Usuario ${discord} foi encontrado na role ${queue.name} e adicionado na fila com prioridade ${queue.priority}!`
-        );
-      }
+  for (let i = 0; i < config.roles.length; i++) {
+    let queue = config.roles[i];
+    let hasRole = discordRoles.filter((d) => d == queue.roleId).length > 0;
+    if (hasRole) {
+      foundPrio = queue.priority;
+      priorityQueue.insert(discord, queue.priority, source);
     }
-  } else {
+
+    if (config.debug) {
+      console.log(
+        `[QUEUE-DISCORD] Usuario ${discord} foi encontrado na role ${queue.name} e adicionado na fila com prioridade ${queue.priority}!`
+      );
+    }
+  }
+
+  if (config.needRole && foundPrio === 0) {
     deferrals.done(
       `Você não foi encontrado em nossa allowlist, caso acredite que seja um erro, entre em contato com o nosso suporte!`
     );
