@@ -1,0 +1,44 @@
+{
+  "name": "fivem-ts-boilerplate",
+  "version": "2.0.0",
+  "description": "A boilerplate for TypeScript in FiveM",
+  "main": "index.js",
+  "scripts": {
+    "client:watch": "webpack --mode development --watch true --config src/client/webpack.config.js",
+    "server:watch": "webpack --mode development --watch true --config src/server/webpack.config.js"
+  },
+  "resolutions": {
+    "bluebird": "https://github.com/takiguru/bluebird"
+  },
+  "author": "Project Error",
+  "license": "MIT",
+  "devDependencies": {
+    "copy-webpack-plugin": "6.4.1",
+    "typescript": "^4.0.3",
+    "typescript-tools": "^0.3.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@citizenfx/client": "^1.0.2967-1",
+    "@citizenfx/server": "^1.0.2967-1",
+    "@prisma/client": "^4.10.0",
+    "@types/i18n": "^0.13.2",
+    "@types/node": "^14.11.2",
+    "@types/sequelize": "^4.28.9",
+    "chalk": "^4.1.0",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.0",
+    "i18n": "^0.14.2",
+    "ifdef-loader": "^2.1.5",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0",
+    "sequelize-typescript": "^2.1.0",
+    "ts-loader": "^8.0.4",
+    "tsyringe": "^4.6.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "discord": {
+        "token": "",
+        "server_id": "180895894739222528"
+    },
+    "needRole": true,
+    "debug": true,
+    "roles": [
+        {
+            "name": "Prioridade 1",
+            "roleId": "180899587781820416",
+            "priority": 1
+        }
+    ]
+}
